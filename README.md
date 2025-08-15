@@ -1,14 +1,14 @@
-let participantes = JSON.parse(localStorage.getItem("participantes")) || [];
+let amigos.secreto = JSON.parse(localStorage.getItem("participantes")) || [];
 
-function salvarParticipantes() {
-    localStorage.setItem("participantes", JSON.stringify(participantes));
+function salvarAmigo.secreto() {
+    localStorage.setItem("amigo.secreto", JSON.stringify(amigo.secreto));
 }
 
 function adicionarParticipante() {
     let nome = document.getElementById("nome").value.trim();
-    if (nome && !participantes.includes(nome)) {
-        participantes.push(nome);
-        salvarParticipantes();
+    if (nome && !amigos.secreto.includes(nome)) {
+        amigos.secreto push(nome);
+        salvarAmigos.secreto();
         atualizarLista();
         document.getElementById("nome").value = "";
     } else {
@@ -19,28 +19,28 @@ function adicionarParticipante() {
 function atualizarLista() {
     let lista = document.getElementById("lista");
     lista.innerHTML = "";
-    participantes.forEach((p, index) => {
+    amigos.secreto.forEach((p, index) => {
         let li = document.createElement("li");
         li.textContent = p;
 
         let btnRemover = document.createElement("button");
         btnRemover.textContent = "❌";
         btnRemover.style.marginLeft = "10px";
-        btnRemover.onclick = () => removerParticipante(index);
+        btnRemover.onclick = () => removerAmigo.secreto(index);
 
         li.appendChild(btnRemover);
         lista.appendChild(li);
     });
 }
 
-function removerParticipante(index) {
-    participantes.splice(index, 1);
-    salvarParticipantes();
+function removerAmigos.secreto(index) {
+    amigos.secreto.splice(index, 1);
+    salvarAmigos.secreto();
     atualizarLista();
 }
 
 function sortear() {
-    if (participantes.length < 2) {
+    if (amigos.secreto.length < 2) {
         alert("Adicione pelo menos 2 participantes!");
         return;
     }
