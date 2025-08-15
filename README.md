@@ -72,3 +72,4 @@ function mostrarResultado(resultado) {
 
 // Carrega a lista ao abrir
 atualizarLista();
+
